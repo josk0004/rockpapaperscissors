@@ -57,41 +57,49 @@ h1 {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(0deg);
   }
 
-  16% {
+  20% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(-40deg);
   }
 
-  24% {
+  30% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(5deg);
   }
 
-  32% {
+  38% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(0deg);
   }
 
-  48% {
+  52% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(-40deg);
   }
 
-  56% {
+  60% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(5deg);
   }
 
-  64% {
+  75% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(0deg);
   }
 
-  80% {
+  100% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(-40deg);
   }
+}
 
-  96% {
+.player.shake2 {
+  transform-origin: left center;
+  animation: shake2 0.8s 1 forwards;
+}
+
+@keyframes shake2 {
+  0% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(5deg);
   }
 
   100% {
     transform: scale(var(--rot), 1) translateX(calc((var(--rot) - 1) * 50%)) rotate(0deg);
   }
+
 }
 
 #texts {

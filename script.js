@@ -12,14 +12,33 @@ document.addEventListener("click", (event) => {
     player.classList.remove("rock", "paper", "scissors");
     computer.classList.remove("rock", "paper", "scissors");
 
-    if (event.target.matches(".rock")) {
+    if (event.target === rockButton) {
         playRound("rock");
-    } else if (event.target.matches(".paper")) {
+    } else if (event.target === paperButton) {
         playRound("paper");
-    } else if (event.target.matches(".scissors")) {
+    } else if (event.target === scissorsButton) {
         playRound("scissors");
     }
 });
+
+function playRound(playerChoice) {
+    const computerChoice = getComputerChoice();
+    const result = determineWinner(playerChoice, computerChoice);
+    player.classList.add("shake", playerChoice);
+    computer.classList.add("shake", computerChoice);
+    setTimeout(() => {
+        player.classList.remove("shake");
+        computer.classList.remove("shake");
+    }, 1800);
+    setTimeout(() => {
+        player.classList.add("shake2");
+        computer.classList.add("shake2");
+    }, 1850);
+    setTimeout(() => {
+        player.classList.remove("shake2");
+        computer.classList.remove("shake2");
+    }, 2650);
+}
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -56,13 +75,3 @@ function determineWinner(playerChoice, computerChoice) {
     }
 }
 
-function playRound(playerChoice) {
-    const computerChoice = getComputerChoice();
-    const result = determineWinner(playerChoice, computerChoice);
-    player.classList.add("shake", playerChoice);
-    computer.classList.add("shake", computerChoice);
-    setTimeout(() => {
-        player.classList.remove("shake");
-        computer.classList.remove("shake");
-    }, 2000);
-}
